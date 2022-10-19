@@ -1,7 +1,7 @@
 {
 	"name": "use-countdown-react",
 	"type": "module",
-	"version": "1.0.0",
+	"version": "1.0.3",
 	"description": "Countdown react hook",
 	"main": "build/index.js",
 	"files": [
@@ -22,8 +22,8 @@
 	"scripts": {
 		"build": "node --loader ts-node/esm node_modules/.bin/webpack-cli --env mode=production",
 		"test": "jest",
-		"lint": "eslint --ext .ts,.tsx src/**",
-		"format": "eslint --ext .ts,.tsx src/** --fix",
+		"lint": "eslint --ext ts,tsx,js,jsx",
+		"format": "eslint --ext ts,tsx,js,jsx --fix",
 		"prepare": "yarn run build",
 		"prepublishOnly": "yarn run lint && yarn run test",
 		"preversion": "yarn run lint",
