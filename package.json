@@ -1,7 +1,7 @@
 {
 	"name": "use-countdown-react",
 	"type": "module",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"description": "Countdown react hook",
 	"main": "build/index.js",
 	"files": [
