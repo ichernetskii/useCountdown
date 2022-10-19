@@ -1,7 +1,8 @@
 node_modules
 /lib
 .idea
-.yarn
+.yarn/*
+!.yarn/releases
 yarn-error.log
 build
 **/.DS_Store
