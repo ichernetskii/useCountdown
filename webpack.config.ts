@@ -31,6 +31,9 @@ export default (env: { mode?: "development" | "production"; } = {}): Configurati
 			hot: true,
 			static: path.resolve(__dirname, "src", "__manual_tests__"),
 		},
+		experiments: {
+			outputModule: true,
+		},
 		entry: isProd
 			? {
 				index: "./useCountdown.tsx",
@@ -52,12 +55,9 @@ export default (env: { mode?: "development" | "production"; } = {}): Configurati
 			path: path.resolve(__dirname, "build"),
 			chunkFilename: `[id]${isProd ? "" : ".[fullhash:8]"}.js`,
 			clean: true,
-			module: true,
 			library: {
 				type: "module",
-				export: "useCountdown",
 			},
-
 		},
 		target: isProd ? "browserslist" : "web", // disable browserslist for development
 		devtool: isProd ? undefined : "source-map",
