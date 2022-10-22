@@ -1,5 +1,4 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import TerserPlugin from "terser-webpack-plugin";
 import path from "path";
 import { Configuration } from "webpack";
 import "webpack-dev-server";
@@ -47,15 +46,18 @@ export default (env: { mode?: "development" | "production"; } = {}): Configurati
 			splitChunks: {
 				chunks: isProd ? "all" : "async",
 			},
-			minimizer: [new TerserPlugin({
-				extractComments: false,
-			})],
 		},
 		output: {
 			filename: `[name]${isProd ? "" : ".[fullhash:8]"}.js`,
 			path: path.resolve(__dirname, "build"),
 			chunkFilename: `[id]${isProd ? "" : ".[fullhash:8]"}.js`,
 			clean: true,
+			module: true,
+			library: {
+				type: "module",
+				export: "useCountdown",
+			},
+
 		},
 		target: isProd ? "browserslist" : "web", // disable browserslist for development
 		devtool: isProd ? undefined : "source-map",

@@ -1,11 +1,11 @@
 {
 	"name": "use-countdown-react",
 	"type": "module",
-	"version": "1.2.0",
+	"version": "1.2.2",
 	"description": "Countdown react hook",
 	"main": "build/index.js",
 	"files": [
-		"build/index.js"
+		"build/**/*"
 	],
 	"types": "build/types/useCountdown.d.ts",
 	"author": "Ilia Chernetskii<ichernetskii@gmail.com>",
