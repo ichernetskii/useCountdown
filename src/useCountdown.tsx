@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { delay, round } from "./helpers";
+import { delay, round } from "./helpers.js";
 
 interface CountdownProps {
 	from: number;
