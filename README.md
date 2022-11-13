@@ -2,6 +2,8 @@
 
 usage in React component:
 ```
+import {useCountdown} from "use-countdown-react"
+
 const value = useCountdown({
 	from: 0,
 	to: 100,
