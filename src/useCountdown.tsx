@@ -26,13 +26,18 @@ function useAsyncIterable<T> (initialValue: T, iterable: AsyncIterable<T>): T {
 	const [value, setValue] = useState(initialValue);
 
 	useEffect(() => {
+		let cancel = false;
 		setValue(initialValue);
 
 		void (async () => {
-			for await (const value of iterable) {
-				setValue(value);
+			if (!cancel) {
+				for await (const value of iterable) {
+					setValue(value);
+				}
 			}
 		})();
+
+		return () => { cancel = true; };
 	}, [iterable]);
 
 	return value;
