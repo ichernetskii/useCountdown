@@ -1,13 +1,8 @@
-import * as React from "react";
-import { useCountdown } from "@/useCountdown";
+import type { JSX } from "react";
+import { type CountdownProps, useCountdown } from "@/useCountdown";
 
-const Label = (): JSX.Element => {
-	const value = useCountdown({
-		from: 10,
-		to: 100,
-		duration: 10_000,
-		delta: 1,
-	});
+const Label = (props: CountdownProps): JSX.Element => {
+	const value = useCountdown(props);
 
 	return <div>{value}</div>;
 };
@@ -22,7 +17,9 @@ export default function App (): JSX.Element {
 
 	return (
 		<div className="App">
-			<Label />
+			<Label from={10} to={100} duration={10_000} delta={1} />
+			<Label from={10} to={0} duration={10_000} delta={1} />
+			<Label from={0} to={1} duration={10_000} delta={0.1} />
 			<h1>{value}</h1>
 		</div>
 	);

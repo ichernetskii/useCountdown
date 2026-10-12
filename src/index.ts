@@ -1,1 +1,1 @@
-export { useCountdown } from "./useCountdown.js";
+export { useCountdown, type CountdownProps } from "./useCountdown.js";

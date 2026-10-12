@@ -1,31 +1,26 @@
 {
 	"compilerOptions": {
-		"outDir": "build",
-		"declaration": true,
-		"declarationDir": "build/types",
-		"module": "ESNext",
-		"target": "ESNext",
+		"target": "ES2020",
 		"lib": [
-			"ESNext",
+			"ES2020",
 			"DOM"
 		],
-		"strict": true,
-		"strictNullChecks": true,
-		"skipLibCheck": true,
-		"sourceMap": true,
-		"noImplicitAny": true,
-		"esModuleInterop": true,
-		"allowJs": true,
-		"moduleResolution": "Node",
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
 		"jsx": "react-jsx",
+		"strict": true,
+		"noUncheckedIndexedAccess": true,
+		"noEmit": true,
+		"skipLibCheck": true,
+		"isolatedModules": true,
+		"verbatimModuleSyntax": true,
+		"types": ["node"],
 		"paths": {
 			"@/*": ["./src/*"]
 		}
 	},
-	"include": ["src"],
-	"exclude": [
-		"node_modules",
-		"src/__manual_tests__",
-		"src/__tests__"
+	"include": [
+		"src",
+		"vite.config.ts"
 	]
 }
